@@ -2,12 +2,14 @@
 const appContainer = document.querySelector('#app');
 
 // The container div
-const containerDiv = document.createElement('div')
-containerDiv.classList.add('container')
-appContainer.append(containerDiv);
+const containerDiv = new Component('div','containerDiv','container',appContainer);
 
-// New button
-const addTodoButton = document.createElement('button');
-addTodoButton.classList.add('add-new-todo-btn');
-addTodoButton.innerHTML = 'New todo';
-containerDiv.append(addTodoButton);
+// The Add new button
+const todoBtn = new Button('button','new-todo','add-new-todo-btn', containerDiv,{
+    type: 'text',
+    text: 'Add new Todo'
+})
+
+// Wraper div for todos
+const todosWrapper = new Component('div','todo-wrap','todo-wrap', containerDiv)
+
