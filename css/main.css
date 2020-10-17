@@ -56,7 +56,7 @@ table {
 }
 
 body {
-  background-color: #424242;
+  background-color: #222831;
 }
 
 .container {
@@ -65,6 +65,24 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+.todo-wrap {
+  margin-top: 40px;
+}
+.todo-wrap .todo {
+  background-color: #30475e;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+.todo-wrap .todo h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.todo-wrap .todo p {
+  line-height: 23px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,8 +3,8 @@ class Todo {
         this.wrap = wrap
         this.mainDiv()
 
-        heading(heading)
-        description(description)
+        this.heading(heading)
+        this.description(description)
     }
 
     mainDiv() {
@@ -14,16 +14,20 @@ class Todo {
     }
 
     heading(heading) {
-        const todoHeading = new Component('h2',null, 'todo-heading', this.div,{
+        const todoHeading = new Component('h2', null, 'todo-heading', this.div, {
             type: 'text',
             text: heading
         })
+
+        return todoHeading
     }
 
-    description(description){
-        const todoDescription = new Component('p',null,'todo-description',this.div,{
+    description(description) {
+        const todoDescription = new Component('p', null, 'todo-description', this.div, {
             type: 'text',
             text: description
         })
+
+        return todoDescription
     }
 }
