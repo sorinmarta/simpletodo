@@ -3,6 +3,8 @@ class Popup{
         this.wrapperDiv()
         this.insideContainer()
         this.contents(contentDiv)
+
+        return this.wrapperDiv()
     }
 
     wrapperDiv(){

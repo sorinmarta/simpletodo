@@ -3,6 +3,7 @@ class Form{
         this.wrapperDiv()
         this.validateInputs(inputs)
         this.loopInputs(inputs)
+
         return this.wrapper
     }
 
