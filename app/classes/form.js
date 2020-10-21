@@ -1,7 +1,14 @@
 class Form{
-    constructor(inputs, formID = null) {
+    constructor(inputs, formID = null){
         this.wrapperDiv()
         this.validateInputs(inputs)
+        
+        if (formID != null){
+            this.formElement(formID)
+        }else{
+            this.formElement()
+        }
+
         this.loopInputs(inputs)
 
         return this.wrapper
@@ -13,6 +20,8 @@ class Form{
 
     formElement(formID = null) {
         this.form = new Component('form',formID,'form',this.wrapper)
+
+        console.dir(this.form)
     }
 
     validateInputs(inputs){
@@ -24,10 +33,18 @@ class Form{
     }
 
     loopInputs(inputs){
-        for (const input in inputs){
+        for (const input of inputs){
             let element = new Component(input.element,input.id,input.className, this.form)
-            const attribute = element.setAttribute('type',element.type)
-            const name = element.setAttribute('name', element.name)
+            const attribute = element.setAttribute('type',input.type)
+            const name = element.setAttribute('name', input.name)
         }
     }
 }
+
+/**
+ * TODO:
+ * 
+ * Add functionality for labels
+ * Add functionality for placeholders
+ * Add functionality for textareas
+ */

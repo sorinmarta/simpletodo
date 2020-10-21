@@ -85,4 +85,25 @@ body {
   line-height: 23px;
 }
 
+#popup {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#popup .popup-inside {
+  width: 800px;
+  margin: auto;
+}
+#popup .popup-inside .form-wrap form input, #popup .popup-inside .form-wrap form textarea {
+  display: block;
+  margin: 10px 5px;
+}
+
 /*# sourceMappingURL=main.css.map */
