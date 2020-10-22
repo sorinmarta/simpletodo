@@ -20,8 +20,6 @@ class Form{
 
     formElement(formID = null) {
         this.form = new Component('form',formID,'form',this.wrapper)
-
-        console.dir(this.form)
     }
 
     validateInputs(inputs){
@@ -34,17 +32,31 @@ class Form{
 
     loopInputs(inputs){
         for (const input of inputs){
+            if(input.label){
+                let label = new Component('label', null, 'todo-label', this.form, {
+                    type: 'text',
+                    text: input.label
+                })
+                let forAttr = label.setAttribute('for', input.id)
+            }
+
             let element = new Component(input.element,input.id,input.className, this.form)
-            const attribute = element.setAttribute('type',input.type)
-            const name = element.setAttribute('name', input.name)
+
+            if(input.type){
+                const attribute = element.setAttribute('type',input.type)
+            }
+
+            if(input.name){
+                const name = element.setAttribute('name', input.name)
+            }
+
+            if(input.placeholder){
+                const placeholder = element.setAttribute('placeholder', input.placeholder)
+            }
+
+            if(input.value){
+                const value = element.setAttribute('value', input.value)
+            }
         }
     }
 }
-
-/**
- * TODO:
- * 
- * Add functionality for labels
- * Add functionality for placeholders
- * Add functionality for textareas
- */

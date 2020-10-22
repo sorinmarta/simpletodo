@@ -1,10 +1,10 @@
 class Popup{
     constructor(contentDiv) {
-        this.wrapperDiv()
+        const returnable = this.wrapperDiv()
         this.insideContainer()
         this.contents(contentDiv)
 
-        return this.wrapperDiv()
+        return returnable
     }
 
     wrapperDiv(){
@@ -22,3 +22,10 @@ class Popup{
         const addContent = insideContainer.append(contentDiv)
     }
 }
+
+/**
+ * TODO:
+ * 
+ * Add closing button
+ * Add the functionality of closing the popup when clicking outside of it
+ */

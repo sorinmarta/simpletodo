@@ -65,6 +65,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  z-index: -1;
 }
 
 .todo-wrap {
@@ -88,7 +89,7 @@ body {
 #popup {
   display: flex;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -100,10 +101,26 @@ body {
 #popup .popup-inside {
   width: 800px;
   margin: auto;
+  background-color: #fefefe;
+  padding: 50px 100px;
 }
 #popup .popup-inside .form-wrap form input, #popup .popup-inside .form-wrap form textarea {
   display: block;
   margin: 10px 5px;
+}
+#popup .popup-inside .form-wrap form input[type=text], #popup .popup-inside .form-wrap form textarea {
+  width: 100%;
+}
+#popup .popup-inside .form-wrap form textarea {
+  height: 100px;
+}
+#popup .popup-inside .form-wrap form input[type=submit] {
+  background-color: #1d3285;
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

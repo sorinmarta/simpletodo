@@ -1,7 +1,7 @@
 #popup{
     display: flex;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
@@ -13,12 +13,31 @@
     .popup-inside{
         width: 800px;
         margin: auto;
+        background-color: #fefefe;
+        padding:50px 100px;
 
         .form-wrap{
             form{
                 input, textarea{
                     display: block;
                     margin: 10px 5px;
+                }
+
+                input[type = text], textarea{
+                    width:100%;
+                }
+
+                textarea{
+                    height:100px;
+                }
+
+                input[type = submit]{
+                    background-color: #1d3285;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: 0;
+                    border-radius: 5px;
+                    margin-top:10px;
                 }
             }
         }
