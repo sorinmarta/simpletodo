@@ -10,6 +10,7 @@ class Popup{
     wrapperDiv(){
         const mainContainer = document.querySelector('#containerDiv')
         const wrapper = new Component('div','popup','popup',mainContainer);
+        this.mainWrapper = wrapper
     }
 
     insideContainer(){
@@ -20,6 +21,10 @@ class Popup{
     contents(contentDiv){
         const insideContainer = document.querySelector('#popup-inside')
         const addContent = insideContainer.append(contentDiv)
+    }
+
+    close(){
+        this.mainWrapper.parentNode.removeChild(this.mainWrapper)
     }
 }
 
