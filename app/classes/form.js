@@ -1,5 +1,5 @@
 class Form{
-    constructor(inputs, formID = null){
+    constructor(inputs, formID = null, formSubmission){
         this.wrapperDiv()
         this.validateInputs(inputs)
         

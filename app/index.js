@@ -47,6 +47,8 @@ todoBtn.addEventListener('click', () => {
     const addNewPopup = new Popup(addNewForm);
 });
 
+const addNewFormSubmit = document.querySelector('#todo-submit')
+addNewFormSubmit.addEventListener('click', new todoFormSubmission)
 /**
  * TODO:
  * 
