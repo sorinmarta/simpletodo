@@ -1,6 +1,11 @@
+function createNewtodo(container){
+    new todoFormSubmission(container)
+}
+
+
 class App{
     constructor(){
-        this.initialLayout()
+        this.initialLayout();
         this.addTodoBtn();
     }
 
@@ -53,7 +58,7 @@ class App{
             const addNewPopup = new Popup(addNewForm);
 
             const addNewFormSubmit = document.querySelector('#todo-submit')
-            addNewFormSubmit.addEventListener('click', function (e) {
+            addNewFormSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
                 new todoFormSubmission(this.todosWrapper)
                 addNewPopup.close()

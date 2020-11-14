@@ -2,6 +2,7 @@ class Popup{
     constructor(contentDiv) {
         const returnable = this.wrapperDiv()
         this.insideContainer()
+        this.closingElement()
         this.contents(contentDiv)
 
         return returnable
@@ -9,28 +10,41 @@ class Popup{
 
     wrapperDiv(){
         const mainContainer = document.querySelector('#containerDiv')
-        const wrapper = new Component('div','popup','popup',mainContainer);
-        this.mainWrapper = wrapper
+        this.wrapper = new Component('div','popup','popup',mainContainer);
     }
 
     insideContainer(){
-        const popup = document.querySelector('#popup')
-        const insideCont = new Component('div','popup-inside','popup-inside', popup)
+        this.insideCont = new Component('div','popup-inside','popup-inside', this.wrapper)
     }
 
     contents(contentDiv){
-        const insideContainer = document.querySelector('#popup-inside')
-        const addContent = insideContainer.append(contentDiv)
+        const addContent = this.insideCont.append(contentDiv)
     }
 
     close(){
-        this.mainWrapper.parentNode.removeChild(this.mainWrapper)
+        this.wrapper.parentNode.removeChild(this.wrapper)
+    }
+    selfClose(){
+        const mainPopup = document.querySelector('.popup')
+        mainPopup.parentNode.removeChild(mainPopup)
+    }
+
+    closingElement(){
+        this.closingBtn = new Component('a','popup-close',null,this.insideCont,{
+            type: 'text',
+            text: 'X'
+        })
+        this.closingBtn.addEventListener('click', () => {
+            this.selfClose()
+        })
+    }
+
+    outsideClose(){
+        // Hide the popup if the user clicks somewhere else
     }
 }
 
 /**
  * TODO:
- * 
- * Add closing button
  * Add the functionality of closing the popup when clicking outside of it
  */
