@@ -76,7 +76,7 @@ body {
   color: #fff;
   padding: 20px 30px;
   border-radius: 5px;
-  max-width: 600px;
+  width: 600px;
   margin-top: 10px;
 }
 .todo-wrap .todo h2 {
@@ -85,6 +85,10 @@ body {
 }
 .todo-wrap .todo p {
   line-height: 23px;
+}
+.todo-wrap .todo .delete-btn {
+  text-align: right;
+  color: red;
 }
 
 #popup {

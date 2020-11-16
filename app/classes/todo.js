@@ -1,16 +1,27 @@
 class Todo {
     constructor(wrap, heading, description) {
         this.wrap = wrap
-        this.mainDiv()
+        // this.mainDiv()
+        this.div = new Component('div', null, 'todo', this.wrap)
 
+        this.utilisBtns()
         this.heading(heading)
         this.description(description)
     }
 
     mainDiv() {
-        const mainDiv = new Component('div', null, 'todo', this.wrap)
+        this.div = new Component('div', null, 'todo', this.wrap)
+    }
 
-        this.div = mainDiv
+    utilisBtns(){
+        const deleteBtn = new Component('p',null,'delete-btn',this.div,{
+            type: 'text',
+            text: 'delete'
+        })
+
+        deleteBtn.addEventListener('click', () => {
+            this.delete()
+        })
     }
 
     heading(heading) {
@@ -29,5 +40,9 @@ class Todo {
         })
 
         return todoDescription
+    }
+
+    delete(){
+        this.div.remove()
     }
 }

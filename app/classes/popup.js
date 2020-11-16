@@ -3,6 +3,7 @@ class Popup{
         const returnable = this.wrapperDiv()
         this.insideContainer()
         this.closingElement()
+        this.outsideClose()
         this.contents(contentDiv)
 
         return returnable
@@ -40,11 +41,11 @@ class Popup{
     }
 
     outsideClose(){
-        // Hide the popup if the user clicks somewhere else
+        const mainPopup = document.querySelector('.popup')
+        window.onclick = (event) => {
+            if (event.target == mainPopup) {
+                this.selfClose()
+            }
+        }
     }
 }
-
-/**
- * TODO:
- * Add the functionality of closing the popup when clicking outside of it
- */
