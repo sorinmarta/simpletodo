@@ -1,8 +1,3 @@
-function createNewtodo(container){
-    new todoFormSubmission(container)
-}
-
-
 class App{
     constructor(){
         this.initialLayout();
