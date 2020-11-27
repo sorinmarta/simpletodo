@@ -18,9 +18,19 @@
       line-height: 23px;
     }
 
-    .delete-btn{
+    .utilis-container{
       text-align:right;
+      display: inline;
+    }
+
+    .delete-btn{
       color: red;
+      cursor: pointer;
+    }
+
+    .edit-btn{
+      color: orange;
+      cursor: pointer;
     }
   }
 }

@@ -14,9 +14,17 @@ class Todo {
     }
 
     utilisBtns(){
-        const deleteBtn = new Component('p',null,'delete-btn',this.div,{
+        const utilisContainer = new Component('div', null , 'utilis-container', this.div)
+
+
+        const deleteBtn = new Component('p',null,'delete-btn',utilisContainer,{
             type: 'text',
             text: 'delete'
+        })
+
+        const editBtn = new Component('p',null,'edit-btn',utilisContainer,{
+            type: 'text',
+            text: 'edit'
         })
 
         deleteBtn.addEventListener('click', () => {

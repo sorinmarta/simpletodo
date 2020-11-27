@@ -86,9 +86,17 @@ body {
 .todo-wrap .todo p {
   line-height: 23px;
 }
-.todo-wrap .todo .delete-btn {
+.todo-wrap .todo .utilis-container {
   text-align: right;
+  display: inline;
+}
+.todo-wrap .todo .delete-btn {
   color: red;
+  cursor: pointer;
+}
+.todo-wrap .todo .edit-btn {
+  color: orange;
+  cursor: pointer;
 }
 
 #popup {
